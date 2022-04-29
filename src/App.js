@@ -1,15 +1,25 @@
 import { Layout } from "./components/Layout";
 import { Introduction } from "./components/Introduction";
 import { Experience } from "./components/Experience";
-import { Box, Divider } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import { Education } from "./components/Education";
 import { Skills } from "./components/Skills";
 import { Contact } from "./components/Contact";
 
-function SectionDivider() {
+function Section({ children }) {
   return (
-    <Box pt={1} pb={4}>
-      <Divider />
+    <Box sx={{ flexGrow: 1, p: 3, px: 0 }}>
+      <Container p={0}>{children}</Container>
+    </Box>
+  );
+}
+
+function SectionAlternate({ children }) {
+  return (
+    <Box
+      sx={{ p: 3, px: 0, backgroundColor: (theme) => theme.brandColors.light }}
+    >
+      <Container>{children}</Container>
     </Box>
   );
 }
@@ -17,15 +27,21 @@ function SectionDivider() {
 function App() {
   return (
     <Layout>
-      <Introduction />
-      <SectionDivider />
-      <Skills />
-      <SectionDivider />
-      <Experience />
-      <SectionDivider />
-      <Education />
-      <SectionDivider />
-      <Contact />
+      <Section>
+        <Introduction />
+      </Section>
+      <SectionAlternate>
+        <Skills />
+      </SectionAlternate>
+      <Section>
+        <Experience />
+      </Section>
+      <SectionAlternate>
+        <Education />
+      </SectionAlternate>
+      <Section>
+        <Contact />
+      </Section>
     </Layout>
   );
 }

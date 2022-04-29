@@ -19,7 +19,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { Article as ArticleIcon } from "@mui/icons-material";
 
-const pages = ["About", "Portfolio", "Contact"];
+const pages = ["Introduction", "Portfolio", "Testimonials", "Contact"];
 
 const label = pages[0];
 
@@ -105,7 +105,6 @@ export function Header() {
     <>
       <AppBar
         enableColorOnDark
-        position="fixed"
         sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
       >
         <Toolbar>

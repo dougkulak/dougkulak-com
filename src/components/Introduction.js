@@ -45,7 +45,8 @@ export function Introduction() {
         }
       >
         <Stack
-          my={2}
+          mt={2}
+          mb={1}
           direction={{ xs: "column", md: "row" }}
           divider={
             isMobile ? (

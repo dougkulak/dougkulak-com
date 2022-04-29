@@ -38,7 +38,7 @@ export function Contact() {
                   variant={"outlined"}
                   startIcon={<DownloadIcon />}
                 >
-                  Resume (PDF)
+                  Résumé (PDF)
                 </Button>
               </Box>
             </CardContent>

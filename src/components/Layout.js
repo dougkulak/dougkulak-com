@@ -6,7 +6,7 @@ import { Box, Toolbar } from "@mui/material";
 function MainContent({ children }) {
   return (
     <>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" sx={{ flexGrow: 1 }}>
         <Toolbar />
         {children}
       </Box>
@@ -19,7 +19,8 @@ export function Layout({ children }) {
     <Box sx={{ display: "flex" }}>
       <Header />
       <MainContent>
-        {children} <Footer />
+        {children}
+        <Footer />
       </MainContent>
     </Box>
   );

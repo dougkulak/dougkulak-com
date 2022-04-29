@@ -3,8 +3,8 @@ import { Box, Divider, Typography } from "@mui/material";
 
 export function Footer() {
   return (
-    <Box>
-      <Box py={1}>
+    <Box p={3} pt={0}>
+      <Box pb={1}>
         <Divider />
       </Box>
       <Typography fontSize="small">
