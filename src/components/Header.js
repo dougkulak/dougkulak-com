@@ -5,33 +5,31 @@ import {
   AppBar,
   Box,
   Button,
+  Container,
   Drawer,
   IconButton,
+  Link,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
+  Stack,
   Toolbar,
   Typography,
-  useMediaQuery,
-  useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Article as ArticleIcon } from "@mui/icons-material";
 
-const pages = ["Introduction", "Portfolio", "Testimonials", "Contact"];
+const pages = ["Introduction", "Portfolio", "Testimonials"];
 
 const label = pages[0];
 
 const drawerWidth = 240;
 
 function Sidebar({ open }) {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
   return (
     <Drawer
-      variant={isMobile ? "temporary" : "permanent"}
+      variant={"temporary"}
       open={open}
       sx={{
         width: drawerWidth,
@@ -80,7 +78,7 @@ function MobileMenuButton({ onClick }) {
 
 function Logo() {
   return (
-    <Box pt={1} sx={{ width: drawerWidth }}>
+    <Box pt={1} mr={8}>
       <img src={logo} alt="Doug Kulak" width="155" height="30" />
     </Box>
   );
@@ -91,6 +89,26 @@ function PageTitle() {
     <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
       {label}
     </Typography>
+  );
+}
+
+function MainNav() {
+  return (
+    <Stack direction="row" spacing={4}>
+      {pages.map((page, i) => (
+        <Link
+          underline="hover"
+          color="inherit"
+          key={i}
+          href={"#"}
+          sx={{ textTransform: "uppercase" }}
+          fontSize={"small"}
+          fontWeight={"bold"}
+        >
+          {page}
+        </Link>
+      ))}
+    </Stack>
   );
 }
 
@@ -105,29 +123,27 @@ export function Header() {
     <>
       <AppBar
         enableColorOnDark
+        elevation={0}
         sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
       >
-        <Toolbar>
-          <MobileMenuButton onClick={handleDrawerToggle} />
-          <Logo />
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <PageTitle />
-          </Box>
-          <Box sx={{ display: { xs: "none", md: "flex" } }} mr={2}>
-            Get Started
-          </Box>
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Button
-              color="inherit"
-              variant="outlined"
-              sx={{ color: "white", display: "block" }}
-              href={"tel:5305002220"}
+        <Container>
+          <Toolbar disableGutters>
+            <MobileMenuButton onClick={handleDrawerToggle} />
+            <Logo />
+            <Box
+              sx={{
+                textAlign: "right",
+                flexGrow: 1,
+                justifyContent: "flex-end",
+                display: { xs: "none", md: "flex" },
+              }}
             >
-              (530) 500-2220
-            </Button>
-          </Box>
-        </Toolbar>
+              <MainNav />
+            </Box>
+          </Toolbar>
+        </Container>
       </AppBar>
+
       <Sidebar open={mobileOpen} />
     </>
   );

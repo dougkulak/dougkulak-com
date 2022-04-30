@@ -8,10 +8,11 @@ import { createTheme } from "@mui/material";
 
 const brandColors = {
   dark: "#212221",
-  primary: "#1181B2",
+  primary: "#3a6b81",
   light: "#DDEDF4",
-  secondary: "#44449B",
+  secondary: "#ff9973",
 };
+
 const normalFontFamily = [
   '"Inter"',
   '"Helvetica"',
@@ -39,7 +40,10 @@ const theme = createTheme({
     h1: { ...headingFontSettings },
     h2: { ...headingFontSettings },
     h3: { ...headingFontSettings },
-    h4: { ...headingFontSettings, color: brandColors.primary },
+    h4: {
+      ...headingFontSettings,
+      color: brandColors.primary,
+    },
     h5: { ...headingFontSettings },
     h6: { ...headingFontSettings },
   },

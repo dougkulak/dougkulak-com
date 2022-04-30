@@ -49,7 +49,7 @@ function Panel({ data, title }) {
             alt={title}
           />
         </Box>
-        <Typography variant="h6">{title}</Typography>
+        <Typography variant="h5">{title}</Typography>
         <Box mb={2} mt={1}>
           <Divider />
         </Box>
@@ -58,7 +58,10 @@ function Panel({ data, title }) {
             key={i}
             label={skillSet.join(", ")}
             variant="outlined"
-            sx={{ backgroundColor: "#efefef", marginBottom: 1 }}
+            sx={{
+              backgroundColor: "#efefef",
+              margin: 0.5,
+            }}
           />
         ))}
       </Box>

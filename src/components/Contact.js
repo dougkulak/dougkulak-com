@@ -30,17 +30,8 @@ export function Contact() {
               <Typography variant={"caption"}>
                 Monday-Friday, 9AM-5PM PST
               </Typography>
-              <Box mt={2}>
-                <Button
-                  href="/resume.pdf"
-                  target={"_blank"}
-                  rel={"noopener"}
-                  variant={"outlined"}
-                  startIcon={<DownloadIcon />}
-                >
-                  Résumé (PDF)
-                </Button>
-              </Box>
+              <br />
+              <Typography variant={"caption"}>Redding, California</Typography>
             </CardContent>
           </Card>
         </Grid>

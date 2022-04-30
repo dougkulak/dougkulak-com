@@ -34,31 +34,35 @@ export function Introduction() {
         Express, GE, YouTube, Dreamworks, and McDonald's.
       </Typography>
       <Box
-        sx={
-          isMobile
-            ? {
-                textAlign: "center",
-              }
-            : {
-                textAlign: "left",
-              }
-        }
+        textAlign={"center"}
+        p={{ xs: 0, md: 2 }}
+        mt={3}
+        mb={2}
+        sx={{ border: "1px solid #ddd" }}
+        borderRadius={4}
       >
         <Stack
           mt={2}
           mb={1}
+          justifyContent={"center"}
           direction={{ xs: "column", md: "row" }}
           divider={
             isMobile ? (
               <Divider flexItem />
             ) : (
-              <ArrowForwardIosIcon color={"secondary"} fontSize="small" />
+              <ArrowForwardIosIcon color={"secondary"} fontSize="medium" />
             )
           }
-          spacing={1}
+          spacing={2}
         >
           {steps.map((step) => (
-            <Typography key={step} color="primary" fontWeight="bold">
+            <Typography
+              key={step}
+              fontWeight="bold"
+              fontSize={"large"}
+              gutterBottom
+              sx={{ color: (theme) => theme.brandColors.secondary }}
+            >
               {step}
             </Typography>
           ))}
