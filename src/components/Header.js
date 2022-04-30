@@ -4,7 +4,6 @@ import logoIcon from "../logo-icon.svg";
 import {
   AppBar,
   Box,
-  Button,
   Container,
   Drawer,
   IconButton,
@@ -15,14 +14,11 @@ import {
   ListItemText,
   Stack,
   Toolbar,
-  Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Article as ArticleIcon } from "@mui/icons-material";
 
 const pages = ["Introduction", "Portfolio", "Testimonials"];
-
-const label = pages[0];
 
 const drawerWidth = 240;
 
@@ -81,14 +77,6 @@ function Logo() {
     <Box pt={1} mr={8}>
       <img src={logo} alt="Doug Kulak" width="155" height="30" />
     </Box>
-  );
-}
-
-function PageTitle() {
-  return (
-    <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
-      {label}
-    </Typography>
   );
 }
 

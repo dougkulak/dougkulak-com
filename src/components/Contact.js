@@ -1,8 +1,6 @@
 import React from "react";
 import { SectionTitle } from "./SectionTitle";
 import {
-  Box,
-  Button,
   Card,
   CardContent,
   Grid,
@@ -14,7 +12,6 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import DownloadIcon from "@mui/icons-material/Download";
 
 export function Contact() {
   return (

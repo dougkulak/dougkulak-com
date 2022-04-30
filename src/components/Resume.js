@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 
 export function Resume() {
