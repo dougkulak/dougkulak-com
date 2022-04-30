@@ -14,7 +14,12 @@ export function Hero() {
         px={4}
       >
         <Container maxWidth={"md"}>
-          <Typography variant="h1" color={"white"} textAlign={"center"}>
+          <Typography
+            variant="h1"
+            color={"white"}
+            textAlign={"center"}
+            sx={{ typography: { md: "h1", sm: "h2", xs: "h3" } }}
+          >
             Hi, I make{" "}
             <span
               style={{
