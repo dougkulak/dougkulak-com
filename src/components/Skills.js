@@ -1,6 +1,6 @@
 import React from "react";
 import { SectionTitle } from "./SectionTitle";
-import { Box, Chip, Divider, Grid, Typography } from "@mui/material";
+import { Box, Chip, Grid, Typography } from "@mui/material";
 
 const skills = {
   frontend: [
@@ -42,6 +42,9 @@ function Panel({ data, title }) {
   return (
     <Grid item xs={12} md={4} textAlign={"center"}>
       <Box borderRadius={4} p={3} sx={{ backgroundColor: "white" }}>
+        <Typography variant="h5" color={"primary"}>
+          {title}
+        </Typography>
         <Box sx={{ display: { xs: "none", md: "block" } }}>
           <img
             src={`/img/${title.toLowerCase()}.png`}
@@ -49,15 +52,11 @@ function Panel({ data, title }) {
             alt={title}
           />
         </Box>
-        <Typography variant="h5">{title}</Typography>
-        <Box mb={2} mt={1}>
-          <Divider />
-        </Box>
         {data.map((skillSet, i) => (
           <Chip
             key={i}
             label={skillSet.join(", ")}
-            variant="outlined"
+            variant="filled"
             sx={{
               backgroundColor: "#efefef",
               margin: 0.5,
