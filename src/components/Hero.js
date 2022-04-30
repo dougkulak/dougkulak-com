@@ -1,7 +1,17 @@
 import React from "react";
-import { Box, Container, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 
 export function Hero() {
+  const theme = useTheme();
+  const isTablet = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <>
       <Box
@@ -24,8 +34,10 @@ export function Hero() {
             <span
               style={{
                 fontFamily: "Permanent Marker",
-                color: "#ff9973",
-                textShadow: "2px 2px 0px #FFFFFF",
+                color: "transparent",
+                background: "linear-gradient(to right, #71a8af, #ff9973)",
+                webkitBackgroundClip: "text",
+                fontSize: isMobile ? "3rem" : isTablet ? "6rem" : "8rem",
               }}
             >
               AWESOME
