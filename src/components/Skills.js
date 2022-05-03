@@ -1,6 +1,6 @@
 import React from "react";
 import { SectionTitle } from "./SectionTitle";
-import { Box, Chip, Grid, Typography } from "@mui/material";
+import { Box, Chip, Container, Grid, Typography } from "@mui/material";
 
 const skills = {
   frontend: [
@@ -41,24 +41,34 @@ const skills = {
 function Panel({ data, title }) {
   return (
     <Grid item xs={12} md={4} textAlign={"center"}>
-      <Box borderRadius={4} p={3} sx={{ backgroundColor: "white" }}>
-        <Typography variant="h5" color={"primary"}>
+      <Box borderRadius={4} p={3} pt={6} sx={{ backgroundColor: "white" }}>
+        <Box sx={{ textAlign: "center", display: { xs: "none", md: "block" } }}>
+          <Box
+            sx={{
+              width: 150,
+              height: 150,
+              background: "linear-gradient(to bottom right, #ddd, #aaa)",
+              borderRadius: 75,
+              display: "inline-block",
+            }}
+          >
+            <img
+              src={`/img/${title.toLowerCase()}.png`}
+              style={{ width: "150px" }}
+              alt={title}
+            />
+          </Box>
+        </Box>
+        <Typography variant="h5" color={"primary"} pb={4}>
           {title}
         </Typography>
-        <Box sx={{ display: { xs: "none", md: "block" } }}>
-          <img
-            src={`/img/${title.toLowerCase()}.png`}
-            style={{ width: "150px" }}
-            alt={title}
-          />
-        </Box>
         {data.map((skillSet, i) => (
           <Chip
             key={i}
             label={skillSet.join(", ")}
             variant="filled"
             sx={{
-              backgroundColor: "#efefef",
+              backgroundColor: "#fff",
               margin: 0.5,
             }}
           />
@@ -70,13 +80,45 @@ function Panel({ data, title }) {
 
 export function Skills() {
   return (
-    <>
-      <SectionTitle>Skills</SectionTitle>
-      <Grid container spacing={3} mb={2}>
-        <Panel data={skills.frontend} title={"Frontend"} />
-        <Panel data={skills.backend} title={"Backend"} />
-        <Panel data={skills.devops} title={"DevOps"} />
-      </Grid>
-    </>
+    <Box
+      sx={{
+        p: 3,
+        px: 0,
+        py: 10,
+        position: "relative",
+        "&::before": {
+          content: '""',
+          backgroundColor: (theme) => theme.brandColors.light,
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: -1,
+        },
+        "&::after": {
+          content: '""',
+          backgroundImage: "url('/img/bg-skills.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "bottom center",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          opacity: 0.3,
+          zIndex: -1,
+        },
+      }}
+    >
+      <Container>
+        <SectionTitle>Skills</SectionTitle>
+        <Grid container spacing={3} mb={2}>
+          <Panel data={skills.frontend} title={"Frontend"} />
+          <Panel data={skills.backend} title={"Backend"} />
+          <Panel data={skills.devops} title={"DevOps"} />
+        </Grid>
+      </Container>
+    </Box>
   );
 }

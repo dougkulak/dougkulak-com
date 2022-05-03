@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 
 export function SectionTitle({ children }) {
   return (
-    <Typography variant="h4" gutterBottom>
+    <Typography variant="h3" gutterBottom sx={{ pb: 6 }}>
       {children}
     </Typography>
   );

@@ -7,10 +7,27 @@ import { Skills } from "./components/Skills";
 import { Contact } from "./components/Contact";
 import { Resume } from "./components/Resume";
 import { Hero } from "./components/Hero";
+import { Outro } from "./components/Outro";
 
 function Section({ children }) {
   return (
-    <Box sx={{ flexGrow: 1, p: 3, px: 0 }}>
+    <Box sx={{ flexGrow: 1, p: 3, px: 0, py: 10 }}>
+      <Container p={0}>{children}</Container>
+    </Box>
+  );
+}
+
+function SectionInverted({ children }) {
+  return (
+    <Box
+      sx={{
+        flexGrow: 1,
+        px: 0,
+        py: 20,
+        backgroundColor: (theme) => theme.brandColors.dark,
+        color: (theme) => theme.brandColors.light,
+      }}
+    >
       <Container p={0}>{children}</Container>
     </Box>
   );
@@ -19,7 +36,12 @@ function Section({ children }) {
 function SectionAlternate({ children }) {
   return (
     <Box
-      sx={{ p: 3, px: 0, backgroundColor: (theme) => theme.brandColors.light }}
+      sx={{
+        p: 3,
+        px: 0,
+        py: 10,
+        backgroundColor: (theme) => theme.brandColors.light,
+      }}
     >
       <Container>{children}</Container>
     </Box>
@@ -32,6 +54,7 @@ function SectionHighlight({ children }) {
       sx={{
         p: 3,
         px: 0,
+        py: 10,
         backgroundColor: (theme) => theme.brandColors.primary,
       }}
     >
@@ -44,12 +67,10 @@ function App() {
   return (
     <Layout>
       <Hero />
-      <Section>
+      <SectionInverted>
         <Introduction />
-      </Section>
-      <SectionAlternate>
-        <Skills />
-      </SectionAlternate>
+      </SectionInverted>
+      <Skills />
       <Section>
         <Experience />
       </Section>
@@ -62,6 +83,7 @@ function App() {
       <SectionHighlight>
         <Resume />
       </SectionHighlight>
+      <Outro />
     </Layout>
   );
 }

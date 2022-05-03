@@ -7,10 +7,10 @@ import { createTheme } from "@mui/material";
 // #44449B
 
 const brandColors = {
-  dark: "#212221",
-  primary: "#3a6b81",
-  light: "#DDEDF4",
-  secondary: "#ff9973",
+  dark: "#090a0c",
+  primary: "#303133",
+  light: "#e0e0e0",
+  secondary: "#b0b1b3",
 };
 
 const normalFontFamily = [
@@ -44,7 +44,7 @@ const theme = createTheme({
       ...headingFontSettings,
       color: brandColors.primary,
     },
-    h5: { ...headingFontSettings },
+    h5: { ...headingFontSettings, color: brandColors.primary },
     h6: { ...headingFontSettings },
   },
 });

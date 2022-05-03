@@ -7,7 +7,7 @@ import {
   useTheme,
 } from "@mui/material";
 
-export function Hero() {
+export function Outro() {
   const theme = useTheme();
   const isTablet = useMediaQuery(theme.breakpoints.down("md"));
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -17,22 +17,19 @@ export function Hero() {
       <Box
         sx={{
           backgroundColor: "#c5c6c8",
-          backgroundImage: "url('/img/bg-hero.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "bottom center",
         }}
         pt={10}
-        pb={isMobile ? 30 : isTablet ? 50 : 70}
+        pb={10}
         px={4}
       >
         <Container maxWidth={"md"}>
           <Typography
-            variant="h1"
+            variant="h3"
             color={"white"}
             textAlign={"center"}
             sx={{ typography: { md: "h1", sm: "h2", xs: "h3" } }}
           >
-            Hi, I make{" "}
+            Let's make{" "}
             <span
               style={{
                 fontFamily: "Permanent Marker",
@@ -44,7 +41,7 @@ export function Hero() {
             >
               AWESOME
             </span>{" "}
-            websites.
+            websites together.
           </Typography>
         </Container>
       </Box>
