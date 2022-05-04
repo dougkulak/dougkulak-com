@@ -3,7 +3,14 @@ import { Box, Container, Typography } from "@mui/material";
 
 export function Footer() {
   return (
-    <Box py={3}>
+    <Box
+      py={3}
+      sx={{
+        background: "#000",
+        color: "#fff",
+      }}
+      textAlign={"center"}
+    >
       <Container>
         <Typography fontSize="small">
           &copy; {new Date().getFullYear()} Doug Kulak &bull;

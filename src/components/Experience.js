@@ -1,6 +1,6 @@
 import React from "react";
 import { SectionTitle } from "./SectionTitle";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 
 const experiences = [
   {
@@ -43,7 +43,7 @@ const experiences = [
 
 export function Experience() {
   return (
-    <>
+    <Container maxWidth={"md"}>
       <SectionTitle>Experience</SectionTitle>
       {experiences.map((experience) => (
         <Box key={experience.title} pb={1}>
@@ -91,6 +91,6 @@ export function Experience() {
           </Grid>
         </Box>
       ))}
-    </>
+    </Container>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { SectionTitle } from "./SectionTitle";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 
 const educations = [
   {
@@ -25,16 +25,16 @@ const educations = [
 
 export function Education() {
   return (
-    <>
+    <Container maxWidth={"md"}>
       <SectionTitle>Education</SectionTitle>
       {educations.map((education) => (
-        <Box key={education.title} pb={1}>
+        <Box key={education.title} pb={2} pt={2}>
           <Grid container spacing={0}>
-            <Grid item xs={12}>
+            <Grid item xs={12} textAlign={"center"}>
               <Typography variant="h6" component={"span"}>
                 {education.title}
               </Typography>{" "}
-              &bull;{" "}
+              <br />
               <Typography
                 variant="subtitle1"
                 fontStyle="italic"
@@ -44,13 +44,13 @@ export function Education() {
                 {education.study}
               </Typography>{" "}
             </Grid>
-            <Grid item mt={-1} mb={1}>
+            <Grid item xs={12} mt={-1} mb={1} textAlign={"center"}>
               <Typography
                 variant="subtitle2"
                 component={"span"}
                 fontStyle="italic"
                 fontWeight="normal"
-                color={"primary"}
+                color={"#999"}
                 gutterBottom
               >
                 {education.date}
@@ -70,6 +70,6 @@ export function Education() {
           </Grid>
         </Box>
       ))}
-    </>
+    </Container>
   );
 }

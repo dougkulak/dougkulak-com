@@ -15,7 +15,7 @@ const steps = [
   "Strategy",
   "UX/UI",
   "Design",
-  "Develop",
+  "Development",
   "Support",
 ];
 
@@ -28,11 +28,11 @@ export function Introduction() {
       <Container maxWidth={"md"}>
         <Typography gutterBottom>
           Welcome! My name is Doug Kulak. I am a digital solutions architect
-          with an extensive background in full-stack web development and web
-          design. I have end-to-end experience working for some of Orange
-          County's premier digital advertising agencies and have built
-          high-traffic and mission-critical applications for clients including
-          Google, American Express, GE, YouTube, Dreamworks, and McDonald's.
+          with an extensive background in full-stack web development and design.
+          I have end-to-end experience working for some of Orange County's
+          premier digital advertising agencies and have built high-traffic and
+          mission-critical applications for clients including Google, American
+          Express, GE, YouTube, Dreamworks, and McDonald's.
         </Typography>
         <Typography
           variant="h4"

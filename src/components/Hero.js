@@ -1,16 +1,13 @@
 import React from "react";
-import {
-  Box,
-  Container,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Box, Container, useMediaQuery, useTheme } from "@mui/material";
+import logoIcon from "../logo-icon-white.svg";
 
 export function Hero() {
   const theme = useTheme();
   const isTablet = useMediaQuery(theme.breakpoints.down("md"));
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const iconSize = isMobile ? 100 : isTablet ? 200 : 400;
 
   return (
     <>
@@ -26,26 +23,9 @@ export function Hero() {
         px={4}
       >
         <Container maxWidth={"md"}>
-          <Typography
-            variant="h1"
-            color={"white"}
-            textAlign={"center"}
-            sx={{ typography: { md: "h1", sm: "h2", xs: "h3" } }}
-          >
-            Hi, I make{" "}
-            <span
-              style={{
-                fontFamily: "Permanent Marker",
-                color: "transparent",
-                background: "linear-gradient(to right, #8360c3, #2ebf91)",
-                webkitBackgroundClip: "text",
-                fontSize: isMobile ? "3rem" : isTablet ? "6rem" : "9rem",
-              }}
-            >
-              AWESOME
-            </span>{" "}
-            websites.
-          </Typography>
+          <Box sx={{ textAlign: "center", marginTop: 10 }}>
+            <img src={logoIcon} width={iconSize} height={iconSize} alt={"DK"} />
+          </Box>
         </Container>
       </Box>
     </>
