@@ -34,7 +34,7 @@ export function Introduction() {
           high-traffic and mission-critical applications for clients including
           Google, American Express, GE, YouTube, DreamWorks, and McDonald's. I
           scale comfortably from high-level architecture to hands-on, tactical
-          execution and after 25 years, I continue to focus on what I enjoy
+          execution and after 20 years, I continue to focus on what I enjoy
           most: Learning, improving, and making awesome websites.
         </Typography>
         <Typography
