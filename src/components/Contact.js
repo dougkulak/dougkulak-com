@@ -41,7 +41,52 @@ export function Contact() {
             display: { xs: "none", sm: "flex", md: "flex" },
           }}
         >
-          <img src={logoIcon} width={90} alt={"DK"} />
+          <Box
+            sx={{
+              position: "relative",
+              padding: 3,
+              transition: "background-color .35s",
+              "&:hover": {
+                backgroundColor: "rgba(180,180,180,0.25)",
+              },
+              "&:hover::before": {
+                opacity: 1,
+                transform: "scale(1)",
+              },
+              "&::before": {
+                content: '""',
+                position: "absolute",
+                top: "10px",
+                right: "10px",
+                bottom: "10px",
+                left: "10px",
+                transform: "scale(0,1)",
+                borderTop: "2px solid #333",
+                borderBottom: "2px solid #333",
+                opacity: 0,
+                transition: "transform .35s,opacity .35s",
+              },
+              "&:hover::after": {
+                opacity: 1,
+                transform: "scale(1)",
+              },
+              "&::after": {
+                content: '""',
+                position: "absolute",
+                top: "10px",
+                right: "10px",
+                bottom: "10px",
+                left: "10px",
+                transform: "scale(1,0)",
+                borderRight: "2px solid #333",
+                borderLeft: "2px solid #333",
+                opacity: 0,
+                transition: "transform .35s,opacity .35s",
+              },
+            }}
+          >
+            <img src={logoIcon} width={90} alt={"DK"} />
+          </Box>
         </Grid>
         <Grid
           item
