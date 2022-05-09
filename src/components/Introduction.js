@@ -27,12 +27,15 @@ export function Introduction() {
     <>
       <Container maxWidth={"md"}>
         <Typography gutterBottom>
-          Welcome! My name is Doug Kulak. I am a digital solutions architect
-          with an extensive background in full-stack web development and design.
-          I have end-to-end experience working for some of Orange County's
-          premier digital advertising agencies and have built high-traffic and
-          mission-critical applications for clients including Google, American
-          Express, GE, YouTube, Dreamworks, and McDonald's.
+          Hello, my name is Doug Kulak. I am a digital solutions architect with
+          an extensive background in full-stack web development and responsive
+          web design. I have end-to-end experience working for some of Orange
+          County's premier digital advertising agencies and have built
+          high-traffic and mission-critical applications for clients including
+          Google, American Express, GE, YouTube, DreamWorks, and McDonald's. I
+          scale comfortably from high-level architecture to hands-on, tactical
+          execution and after 25 years, I continue to focus on what I enjoy
+          most: Learning, improving, and making awesome websites.
         </Typography>
         <Typography
           variant="h4"
